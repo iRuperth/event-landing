@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-bg: var(--clr-surface);
+  --clr-surface: #EBE7E0;
+  --clr-panel: #FFFFFF;
+  --clr-text: #44749D;
+  --clr-muted: #BDB8AD;
+  --clr-primary: #44749D;
+  --clr-secondary: #C6D4E1;
+  --clr-border: #C6D4E1;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Source Sans Pro',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+}
+
+a {
+  color: var(--clr-text);
+}
+
+main {
+  min-height: calc(100vh - 200px);
+}
+
+.bg-theme { background-color: var(--clr-surface); }
+.text-theme { color: var(--clr-text); }
+.text-muted { color: var(--clr-muted); }
+.border-theme { border-color: var(--clr-border); }
+
+/* Palette utility overrides */
+.bg-gray-50 { background-color: var(--clr-surface); }
+.bg-white { background-color: var(--clr-panel); }
+.text-gray-600, .text-gray-700 { color: var(--clr-text); }
+.text-gray-500 { color: var(--clr-muted); }
+.text-blue-600, .bg-blue-600 { color: #fff; background-color: var(--clr-primary); }
+.text-blue-700 { color: #2a5f87; }
+.bg-blue-50 { background-color: #EAF4FC; }
+.border-gray-300 { border-color: #C6D4E1; }
+.text-blue-100 { color: #ebf5ff; }
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0066cc;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
