@@ -9,7 +9,6 @@ export default function AdminPage() {
 
   const handleLogin = (e) => {
     e.preventDefault()
-    // TODO: Implement actual authentication
     if (email && password) {
       setIsLoggedIn(true)
     }
@@ -19,9 +18,9 @@ export default function AdminPage() {
     return (
       <div className="min-h-screen bg-theme text-theme flex items-center justify-center">
         <div className="max-w-md w-full">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+          <div className="bg-panel p-8 rounded-lg shadow-lg">
             <h1 className="text-3xl font-bold text-center mb-4">🔐 Admin Dashboard</h1>
-            <p className="text-gray-600 text-center mb-6">Login to manage the event</p>
+            <p className="text-muted text-center mb-6">Login to manage the event</p>
 
             <form onSubmit={handleLogin}>
               <div className="mb-4">
@@ -30,7 +29,7 @@ export default function AdminPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-theme rounded-lg bg-panel text-theme focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="admin@example.com"
                   required
                 />
@@ -41,14 +40,14 @@ export default function AdminPage() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-theme rounded-lg bg-panel text-theme focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="••••••••"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition"
+                className="w-full btn-primary py-2"
               >
                 Login
               </button>
@@ -66,82 +65,80 @@ export default function AdminPage() {
           <h1 className="text-4xl font-bold">🔐 Admin Dashboard</h1>
           <button
             onClick={() => setIsLoggedIn(false)}
-            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+            className="btn-outline"
           >
             Logout
           </button>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-gray-600 text-sm font-bold mb-2">Total Registrations</h3>
-            <p className="text-4xl font-bold text-blue-600">85</p>
-            <p className="text-gray-500 text-sm mt-2">Up 12% from last week</p>
+          <div className="bg-panel p-6 rounded-lg shadow">
+            <h3 className="text-muted text-sm font-bold mb-2">Total Registrations</h3>
+            <p className="text-4xl font-bold text-primary">85</p>
+            <p className="text-muted text-sm mt-2">Up 12% from last week</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-gray-600 text-sm font-bold mb-2">Tickets Issued</h3>
-            <p className="text-4xl font-bold text-green-600">78</p>
-            <p className="text-gray-500 text-sm mt-2">92% conversion rate</p>
+          <div className="bg-panel p-6 rounded-lg shadow">
+            <h3 className="text-muted text-sm font-bold mb-2">Tickets Issued</h3>
+            <p className="text-4xl font-bold text-green-600 dark:text-green-400">78</p>
+            <p className="text-muted text-sm mt-2">92% conversion rate</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-gray-600 text-sm font-bold mb-2">Speakers</h3>
-            <p className="text-4xl font-bold text-purple-600">15</p>
-            <p className="text-gray-500 text-sm mt-2">All confirmed</p>
+          <div className="bg-panel p-6 rounded-lg shadow">
+            <h3 className="text-muted text-sm font-bold mb-2">Speakers</h3>
+            <p className="text-4xl font-bold text-purple-600 dark:text-purple-400">15</p>
+            <p className="text-muted text-sm mt-2">All confirmed</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-gray-600 text-sm font-bold mb-2">Days Until Event</h3>
-            <p className="text-4xl font-bold text-orange-600">0</p>
-            <p className="text-gray-500 text-sm mt-2">Today is the event!</p>
+          <div className="bg-panel p-6 rounded-lg shadow">
+            <h3 className="text-muted text-sm font-bold mb-2">Days Until Event</h3>
+            <p className="text-4xl font-bold text-orange-600 dark:text-orange-400">0</p>
+            <p className="text-muted text-sm mt-2">Today is the event!</p>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Recent Registrations */}
-          <div className="bg-white p-6 rounded-lg shadow">
+          <div className="bg-panel p-6 rounded-lg shadow">
             <h2 className="text-2xl font-bold mb-4">Recent Registrations</h2>
             <div className="space-y-3 text-sm">
-              <div className="flex justify-between py-2 border-b">
+              <div className="flex justify-between py-2 border-b border-theme">
                 <span>John Doe</span>
-                <span className="text-green-600">✓ Verified</span>
+                <span className="text-green-600 dark:text-green-400">✓ Verified</span>
               </div>
-              <div className="flex justify-between py-2 border-b">
+              <div className="flex justify-between py-2 border-b border-theme">
                 <span>Jane Smith</span>
-                <span className="text-green-600">✓ Verified</span>
+                <span className="text-green-600 dark:text-green-400">✓ Verified</span>
               </div>
-              <div className="flex justify-between py-2 border-b">
+              <div className="flex justify-between py-2 border-b border-theme">
                 <span>Mike Johnson</span>
-                <span className="text-yellow-600">⏳ Pending</span>
+                <span className="text-yellow-600 dark:text-yellow-400">⏳ Pending</span>
               </div>
               <div className="flex justify-between py-2">
                 <span>Sarah Williams</span>
-                <span className="text-green-600">✓ Verified</span>
+                <span className="text-green-600 dark:text-green-400">✓ Verified</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Actions */}
-          <div className="bg-white p-6 rounded-lg shadow">
+          <div className="bg-panel p-6 rounded-lg shadow">
             <h2 className="text-2xl font-bold mb-4">Quick Actions</h2>
             <div className="space-y-3">
-              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition text-left pl-4">
+              <button className="w-full bg-primary text-white py-2 rounded hover:opacity-90 transition text-left pl-4">
                 → Manage Attendees
               </button>
-              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition text-left pl-4">
+              <button className="w-full bg-primary text-white py-2 rounded hover:opacity-90 transition text-left pl-4">
                 → View Analytics
               </button>
-              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition text-left pl-4">
+              <button className="w-full bg-primary text-white py-2 rounded hover:opacity-90 transition text-left pl-4">
                 → Send Email Blast
               </button>
-              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition text-left pl-4">
+              <button className="w-full bg-primary text-white py-2 rounded hover:opacity-90 transition text-left pl-4">
                 → Upload Gallery
               </button>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
-          <h3 className="font-bold text-yellow-900 mb-2">⚠️ Note</h3>
-          <p className="text-yellow-800 text-sm">
+        <div className="mt-8 bg-surface border-l-4 border-yellow-500 p-6 rounded-r-lg">
+          <h3 className="font-bold mb-2">⚠️ Note</h3>
+          <p className="text-sm">
             This is a placeholder dashboard. Full admin features will be implemented in Phase 5 with authentication,
             detailed analytics, attendee management, and more.
           </p>

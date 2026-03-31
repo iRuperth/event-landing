@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   return (
@@ -11,22 +12,24 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <ul className="flex gap-6 text-sm font-medium">
             <li>
-              <Link href="/" className="hover:text-secondary">Home</Link>
+              <Link href="/" className="nav-link">Home</Link>
             </li>
             <li>
-              <Link href="/schedule" className="hover:text-secondary">Schedule</Link>
+              <Link href="/schedule" className="nav-link">Schedule</Link>
             </li>
             <li>
-              <Link href="/speakers" className="hover:text-secondary">Speakers</Link>
+              <Link href="/speakers" className="nav-link">Speakers</Link>
             </li>
             <li>
-              <Link href="/gallery" className="hover:text-secondary">Gallery</Link>
+              <Link href="/gallery" className="nav-link">Gallery</Link>
             </li>
           </ul>
 
+          <ThemeToggle />
+
           <Link
             href="/register"
-            className="bg-primary text-white px-4 py-2 rounded hover:opacity-95"
+            className="btn-primary"
           >
             Register
           </Link>

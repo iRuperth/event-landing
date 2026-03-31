@@ -21,7 +21,7 @@ export default function SpeakerCard({ speaker }) {
             <a 
               href={`https://twitter.com/${speaker.twitter.replace('@', '')}`}
               title="Twitter"
-              className="text-blue-400 hover:text-blue-600 text-lg font-bold"
+              className="icon-link text-blue-400 hover:text-blue-600 text-lg font-bold"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -32,7 +32,7 @@ export default function SpeakerCard({ speaker }) {
             <a 
               href={`https://linkedin.com/in/${speaker.linkedin}`}
               title="LinkedIn"
-              className="text-blue-700 hover:text-blue-900 font-bold"
+              className="icon-link text-blue-700 hover:text-blue-900 font-bold"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -43,7 +43,7 @@ export default function SpeakerCard({ speaker }) {
             <a 
               href={`https://instagram.com/${speaker.instagram.replace('@', '')}`}
               title="Instagram"
-              className="text-pink-600 hover:text-pink-700 text-lg"
+              className="icon-link text-pink-600 hover:text-pink-700 text-lg"
               target="_blank"
               rel="noopener noreferrer"
             >
