@@ -67,7 +67,7 @@ sudo systemctl start postgresql
 
 ## 🧰 Setup
 
-### 1. Clone repository
+### 1. Clone repository. 
 
 ```bash
 git clone https://github.com/iRuperth/event-landing.git
