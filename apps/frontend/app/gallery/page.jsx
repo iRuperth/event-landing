@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 
 export default function GalleryPage() {
   const [images, setImages] = useState([])
@@ -9,7 +8,6 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => {
-    // TODO: Fetch from API
     const mockImages = [
       { id: 1, title: "Workshop 2024 - Opening", url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" },
       { id: 2, title: "Panel Discussion", url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" },
@@ -26,13 +24,13 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-theme text-theme">
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold mb-4 text-center">🖼️ Event Gallery</h1>
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-xl text-muted text-center mb-12 max-w-2xl mx-auto">
           Relive the moments from our previous events. Check out the highlights, keynotes, and networking sessions.
         </p>
 
         {loading ? (
           <div className="text-center py-12">
-            <p className="text-xl text-gray-600">Loading gallery...</p>
+            <p className="text-xl text-muted">Loading gallery...</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -58,7 +56,6 @@ export default function GalleryPage() {
         )}
       </div>
 
-      {/* Modal for full image view */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"

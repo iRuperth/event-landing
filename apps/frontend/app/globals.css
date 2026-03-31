@@ -12,17 +12,26 @@
   --clr-bg: var(--clr-surface);
   --clr-surface: #EBE7E0;
   --clr-panel: #FFFFFF;
-  --clr-text: #44749D;
-  --clr-muted: #BDB8AD;
+  --clr-text: #1a1a1a;
+  --clr-muted: #6b7280;
   --clr-primary: #44749D;
   --clr-secondary: #C6D4E1;
   --clr-border: #C6D4E1;
 }
 
+html.dark {
+  --clr-bg: #1a1a1a;
+  --clr-surface: #2d2d2d;
+  --clr-panel: #404040;
+  --clr-text: #ffffff;
+  --clr-muted: #a0a0a0;
+  --clr-primary: #6b9bd1;
+  --clr-secondary: #4a5568;
+  --clr-border: #4a5568;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Source Sans Pro',
-    sans-serif;
+  font-family: 'Courier New', 'Monaco', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--clr-bg);
@@ -31,6 +40,9 @@ body {
 
 a {
   color: var(--clr-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 main {
@@ -42,15 +54,66 @@ main {
 .text-muted { color: var(--clr-muted); }
 .border-theme { border-color: var(--clr-border); }
 
-/* Palette utility overrides */
-.bg-gray-50 { background-color: var(--clr-surface); }
+/* Palette utility overrides — theme-aware */
+.bg-gray-50, .bg-gray-100 { background-color: var(--clr-surface); }
 .bg-white { background-color: var(--clr-panel); }
-.text-gray-600, .text-gray-700 { color: var(--clr-text); }
+.bg-blue-50 { background-color: var(--clr-surface); }
 .text-gray-500 { color: var(--clr-muted); }
+.text-gray-600, .text-gray-700, .text-gray-900 { color: var(--clr-text); }
+.text-blue-900 { color: var(--clr-text); }
+.text-blue-700 { color: var(--clr-primary); }
 .text-blue-600, .bg-blue-600 { color: #fff; background-color: var(--clr-primary); }
-.text-blue-700 { color: #2a5f87; }
-.bg-blue-50 { background-color: #EAF4FC; }
-.border-gray-300 { border-color: #C6D4E1; }
+.text-blue-500 { color: var(--clr-primary); }
+.text-green-800 { color: var(--clr-text); }
+.text-green-700 { color: var(--clr-text); }
+.text-yellow-900, .text-yellow-800 { color: var(--clr-text); }
+
+/* Form inputs dark mode */
+html.dark input, html.dark select, html.dark textarea {
+  background-color: var(--clr-surface);
+  color: var(--clr-text);
+  border-color: var(--clr-border);
+}
+html.dark input::placeholder {
+  color: var(--clr-muted);
+}
+
+/* Alert boxes dark mode */
+html.dark .bg-green-50, html.dark .bg-red-50, html.dark .bg-yellow-50, html.dark .bg-blue-50 {
+  background-color: var(--clr-surface);
+}
+
+/* Unified button styles */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded font-bold cursor-pointer transition-all duration-300 ease-in-out border-2 border-primary hover:opacity-90 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-secondary text-primary rounded font-bold cursor-pointer transition-all duration-300 ease-in-out border-2 border-secondary hover:bg-opacity-90 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary;
+  }
+
+  .btn-outline {
+    @apply px-4 py-2 bg-transparent text-primary rounded font-bold cursor-pointer transition-all duration-300 ease-in-out border-2 border-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+
+  .nav-link {
+    @apply text-inherit no-underline cursor-pointer transition-colors duration-300 ease-in-out hover:text-secondary;
+  }
+
+  .icon-link {
+    @apply cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 focus:outline-none;
+  }
+}
+
+/* Global interactive elements */
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}
+.border-gray-300 { border-color: var(--clr-border); }
 .text-blue-100 { color: #ebf5ff; }
 
 button {

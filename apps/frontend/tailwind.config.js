@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,7 +13,7 @@ module.exports = {
         surface: 'var(--clr-surface)',
         text: 'var(--clr-text)',
         muted: 'var(--clr-muted)',
-        panel: '#FFFFFF',
+        panel: 'var(--clr-panel)',
       },
       spacing: {
         '128': '32rem',

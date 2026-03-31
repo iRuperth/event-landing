@@ -45,7 +45,7 @@ export default function TicketPage() {
 
               {/* QR Code */}
               <div className="flex flex-col items-center justify-center bg-white p-4 rounded">
-                <img 
+                <img
                   src={ticketData.qrCode}
                   alt="QR Code"
                   className="w-48 h-48 mb-4"
@@ -56,22 +56,22 @@ export default function TicketPage() {
           </div>
 
           {/* Status */}
-          <div className="bg-white p-6 rounded-lg shadow mb-8">
+          <div className="bg-panel p-6 rounded-lg shadow mb-8">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-xl font-bold">Ticket Status</h3>
-                <p className="text-gray-600">Valid & Ready</p>
+                <p className="text-muted">Valid & Ready</p>
               </div>
-              <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold">
+              <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold dark:bg-green-900 dark:text-green-200">
                 ✓ VALID
               </span>
             </div>
           </div>
 
           {/* Instructions */}
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
-            <h3 className="text-xl font-bold text-blue-900 mb-4">📋 Event Instructions</h3>
-            <ul className="space-y-2 text-blue-900">
+          <div className="bg-surface border-l-4 border-primary p-6 rounded-r-lg mb-8">
+            <h3 className="text-xl font-bold mb-4">📋 Event Instructions</h3>
+            <ul className="space-y-2">
               <li>✓ Arrive 15 minutes before the event starts</li>
               <li>✓ Bring this ticket (digital or printed)</li>
               <li>✓ Check in at the registration desk</li>
@@ -80,9 +80,8 @@ export default function TicketPage() {
             </ul>
           </div>
 
-          {/* Download Button */}
           <div className="text-center">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+            <button className="btn-primary px-8 py-3">
               📥 Download Ticket (PDF)
             </button>
           </div>
